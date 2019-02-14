@@ -1,0 +1,25 @@
+@layout('auth/layout/main')
+
+@section('content')
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form" action="{{ route('/signup') }}" method="POST">
+                {{ csrfField() }}
+                <input
+                    type="text"
+                    name="email"
+                    class="input {{ hasErrorFor('email') ? 'is-danger' : '' }}"
+                    placeholder="email address"/>
+                    {{ elIf('<span class="text-danger">$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
+                <input
+                    type="password"
+                    name="password"
+                    class="input {{ hasErrorFor('password') ? 'is-danger' : '' }}"
+                    placeholder="password"/>
+                    {{ elIf('<span class="text-danger">$self</span>', getErrorFor('password'), hasErrorFor('password')) }}
+                <button>Register</button>
+                <p class="message">Already registered? <a href="/">Sign In</a></p>
+            </form>
+        </div>
+    </div>
+@endsection

@@ -1,0 +1,95 @@
+@layout('dashboard/layout/main')
+
+@section('content')
+<!-- Start Sale Statistic area-->
+<div class="container">
+    <a href="/new_user" style="float: right;" class="btn btn-success btn-icon-notika"><i class="fa fa-plus"></i> Add New User</a>
+</div>
+
+<div class="clearfix hidden-xs hidden-sm"> </div>
+<div class="clearfix hidden-xs hidden-sm"> </div>
+
+<div class="data-table-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="data-table-list">
+                    <div class="basic-tb-hd">
+                        <h2>Users</h2>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table id="data-table-basic" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Id Number</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>+254700000000</td>
+                                    <td>Edinburgh@gmail.com</td>
+                                    <td>10</td>
+                                    <td>
+                                        <button class="btn btn-default"></i> View</button>
+                                        <button class="btn btn-primary"></i> Edit</button>
+                                        <button class="btn btn-danger"></i> Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>+254700000000</td>
+                                    <td>Edinburgh@gmail.com</td>
+                                    <td>1</td>
+                                    <td>
+                                        <button class="btn btn-default"></i> View</button>
+                                        <button class="btn btn-primary"></i> Edit</button>
+                                        <button class="btn btn-danger"></i> Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lyon riley</td>
+                                    <td>+254700000000</td>
+                                    <td>lyon@gmail.com</td>
+                                    <td>4</td>
+                                    <td>
+                                        <button class="btn btn-default"></i> View</button>
+                                        <button class="btn btn-primary"></i> Edit</button>
+                                        <button class="btn btn-danger"></i> Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ted Matt</td>
+                                    <td>+254700000000</td>
+                                    <td>tedmatt@gmail.com</td>
+                                    <td>61</td>
+                                    <td>
+                                        <button class="btn btn-default btn-icon-notika"></i> View</button>
+                                        <button class="btn btn-primary btn-icon-notika"></i> Edit</button>
+                                        <button class="btn btn-danger btn-icon-notika"></i> Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Id Number</th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data Table area End-->
+@endsection

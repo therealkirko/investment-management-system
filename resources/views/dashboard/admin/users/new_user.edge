@@ -1,0 +1,306 @@
+@layout('dashboard/layout/main')
+
+@section('content')
+<style>
+    
+</style>
+
+        
+        
+<div class="breadcomb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcomb-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-form"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Add New Admin</h2>
+                                    <p>Note: <span class="bread-ntd">This are normal admin users</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                            <div class="breadcomb-report">
+                                <button class="btn"><i class="notika-icon notika-sent"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-element-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-element-list">
+                    <div class="cmp-tb-hd bcs-hd">
+                        <h2>Add new User</h2>
+                    </div>
+                    <div class="stepwizard">
+                        <div class="stepwizard-row setup-panel">
+                            <div class="stepwizard-step col-xs-3"> 
+                                <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
+                                <p><small>Investor</small></p>
+                            </div>
+                            <div class="stepwizard-step col-xs-3"> 
+                                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                                <p><small>Next of Kin</small></p>
+                            </div>
+                            <div class="stepwizard-step col-xs-3"> 
+                                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                                <p><small>Investments</small></p>
+                            </div>
+                            <div class="stepwizard-step col-xs-3"> 
+                                <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+                                <p><small>Payment Details</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form role="form" method="POST" action="/new_user">
+                        {{ csrfField() }}
+                        <div class="panel panel-default setup-content" id="step-1">
+                            <div class="panel-heading">
+                                    <h3 class="panel-title">Investor - Personal details</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="fname">First Name</label>
+                                        <input type="name" class="form-control" name="fname" placeholder="First Names">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="middlename">Middle Name</label>
+                                        <input type="name" class="form-control" name="mname" placeholder="Middle Name">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="lname">Last Name</label>
+                                        <input type="name" class="form-control" name="lname" placeholder="Last Name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="lname">ID / Passport</label>
+                                        <input type="text" class="form-control" name="passport" id="passport" placeholder="ID / Passport">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="+254xxxxxxxxx">
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default setup-content" id="step-2">
+                            <div class="panel-heading">
+                                    <h3 class="panel-title">Next Of Kin</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-row">
+
+                                    <div class="form-group">
+                                        <input type="button" class="btn btn-success pull-right" id="newkin" value="Add">
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="fname">First Name</label>
+                                        <input type="name" class="form-control" name="firstname[]" id="firstname" placeholder="First Names">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="mname">Middle Name</label>
+                                        <input type="name" class="form-control" name="middlename[]" id="middlename" placeholder="Middle Name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="lname">Last Name</label>
+                                        <input type="name" class="form-control" name="lastname[]" id="lastname" placeholder="Last Name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" class="form-control" name="mail[]" id="mail" placeholder="Email Address">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="passport">ID / Passport</label>
+                                        <input type="text" class="form-control" name="idno[]" id="idno" placeholder="ID / Passport">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="number" class="form-control" name="phoneno[]" id="phoneno" placeholder="eg : +254xxxxxxxxx">
+                                    </div>
+                                </div>
+
+                                <div id="nextkin">
+
+                                </div>
+
+                                <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default setup-content" id="step-3">
+                            <div class="panel-heading">
+                                    <h3 class="panel-title">Investments</h3>
+                            </div>
+                            <style>
+                                select{
+                                    text-align-last:center;
+                                    padding-right: 29px;
+                                }
+                            </style>
+                            <div class="panel-body">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="fnumber">File Number</label>
+                                        <input type="name" class="form-control" name="fnumber" placeholder="File Number">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="type">Investment Type</label>
+                                        <select class="form-control" id="invtype">
+                                            <option value="tree">Tree Investment</option>
+                                            <option value="                                                                                                                                                                                                           ">Combo Investment</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="capital">Investment Capital</label>
+                                        <input type="number" class="form-control" name="capital" placeholder="Investment Capital">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="date">Investment Date</label>
+                                        <input type="date" class="form-control" name="date" placeholder="Investment Date">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="investmentno">Number of Investment</label>
+                                        <input type="number" class="form-control" name="investmentno" placeholder="Number of Investment">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="investmentsize">Size of Investment</label>
+                                        <input type="number" class="form-control" name="investmentsize" placeholder="Size of Investment">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="unitprice">Unit Price</label>
+                                        <input type="number" class="form-control" name="unitprice" placeholder="Unit Price">
+                                    </div>
+                                </div>
+
+                                <label id="otherName" style="display: none;">Enter your Name
+                                    <input type="text" name="name" />
+                                </label>
+
+                                </div>
+                                <script>
+                                    $(document).ready(function() {
+                                        $("#invtype").on("change", function() {
+                                            if ($(this).val() === "combo") {
+                                                $("#otherName").show();
+                                            }
+                                            else {
+                                                $("#otherName").hide();
+                                            }
+                                        });
+                                    });
+                                </script>
+
+                                <div class="clearfix"></div>
+
+                                <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default setup-content" id="step-4">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Payment Details</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <input type="button" class="btn btn-success pull-right" id="add_extra" value="Add">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="method">Payment Method</label>
+                                        <input type="text" class="form-control" name="method[]" id="method" placeholder="Payment Method">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="refcode">Reference Code</label>
+                                        <input type="text" class="form-control" name="reference_code[]" id="reference_code" placeholder="Reference Code">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="amount">Amount</label>
+                                        <input type="number" class="form-control" name="amount[]" id="amount" placeholder="Amount" />
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <div class="clearfix"></div>
+
+                                <div id="extra_fields">
+
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <div class="clearfix"></div>
+
+                                <button class="btn btn-success pull-right" type="submit">Finish!</button>
+                            </div>
+                        </div>
+                    </form>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ script('https://code.jquery.com/jquery-1.7.2.min.js') }}
+<script>
+    var i = 1;
+
+    /* ======================================================
+        This function is for adding a delete button
+       ======================================================*/
+    $(document).on('click', '.btn-remove', function () {
+        var button_id = $(this).attr("id");
+
+        $("#row" + button_id + "").remove();
+    });
+
+    /* ======================================================
+        This function is for adding new next of kin field
+       ======================================================*/
+    var add_kin = document.getElementById("newkin");
+    add_kin.onclick = function () {
+        i++;
+        
+        $('#nextkin').append('<div class="form-row" id="row' + i + '"><h3 class="panel-title">New Next of Kin</h3><div class="form-group pull-right"><button class="btn btn-danger btn-sm btn-remove" id="' + i + '">Delete</button></div><div class="clearfix"></div><div class="form-group col-md-6"> <label for="fname">First Name</label><input type="text" class="form-control" id="firstname" name="firstname[]" placeholder="First Name"></div><div class="form-group col-md-6"><label for="mname">Middle Name</label><input type="text" class="form-control" id="middlename" name="middlename[]" placeholder="Middle Name"></div><div class="form-group col-md-6"><label for="lname">Last Name</label><input type="text" class="form-control" id="lastname" name="lastname[]" placeholder="Last Name"></div><div class="form-group col-md-6"><label for="email">Email Address</label><input type="text" class="form-control" id="mail" name="mail[]" placeholder="Email Address"></div><div class="form-group col-md-6"><label for="passport">ID / Passport</label><input type="text" class="form-control form-control-sm" id="idno" name="idno[]" placeholder="ID / Passport"></div><div class="form-group col-md-6"><label for="phone">Phone Number</label><input type="text" class="form-control" id="phoneno" name="phoneno[]" placeholder="eg: +254xxxxxxxxx"></div><div class="clearfix></div></div>');
+    }
+
+    /* ================================================================
+        This function is for adding a new field for the payment method
+       ================================================================*/
+    var add_payment = document.getElementById("add_extra");
+    add_payment.onclick = function () {
+        i++;
+        $('#extra_fields').append('<div class="form-row" id="row' + i + '"><div class="clearfix"></div><h3 class="panel-title">New Payment</h3><div class="form-group pull-right"><button class="btn btn-danger  btn-remove" id="' + i + '">Delete</button></div><div class="clearfix"></div><div class="form-group col-md-3"><label for="method">Payment Method</label><input type="text" class="form-control" id="method" name="method[]" placeholder="Payment Method"></div><div class="form-group col-md-3"><label for="refcode">Refence Code</label><input type="text" class="form-control" id="reference_code" name="reference_code[]" placeholder="Reference Code"></div><div class="form-group col-md-3"><label for="amount">Amount</label><input type="number" class="form-control" id="amount" name="amount[]" placeholder="Amount"></div></div>');
+    }
+</script>
+<!-- Form Element area End-->
+@endsection

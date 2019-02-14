@@ -1,0 +1,146 @@
+<div class="header-top-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="logo-area">
+                    <a href="#"><img src="{{ assetsUrl('assets/img/logo/logo.png') }}" alt="COMBO" /></a>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="header-top-menu">
+                    <ul class="nav navbar-nav notika-top-nav">
+                        <li class="nav-item dropdown">
+                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
+                            <div role="menu" class="dropdown-menu search-dd animated flipInX">
+                                <div class="search-input">
+                                    <i class="notika-icon notika-left-arrow"></i>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#"
+                                data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                <span>
+                                    <i class="notika-icon notika-alarm"></i>
+                                </span>
+                            </a>
+                            <div role="menu" class="dropdown-menu message-dd animated zoomIn">
+                                <div class="hd-mg-tt">
+                                    <h2>Notification</h2>
+                                </div>
+                                <div class="hd-message-info">
+                                    <a href="#">
+                                        <div class="hd-message-sn">
+                                            <div class="hd-message-img">
+                                            <img src="{{ assetsUrl('assets/img/post/1.jpg')}}" alt="" />
+                                            </div>
+                                            <div class="hd-mg-ctn">
+                                                <h3>David Belle</h3>
+                                                <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="hd-message-sn">
+                                            <div class="hd-message-img">
+                                            <img src="{{ assetsUrl('img/post/2.jpg')}}" alt="" />
+                                            </div>
+                                            <div class="hd-mg-ctn">
+                                                <h3>Jonathan Morris</h3>
+                                                <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="hd-mg-va">
+                                    <a href="#">View All</a>
+                                </div>
+                            </div>
+                        </li>
+                        {{--  Logout Button  --}}
+                        <li class="nav-item">
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Logout" role="button" aria-expanded="false">
+                                <span><i class="fa fa-power-off"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Header Top Area -->
+<div class="mobile-menu-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mobile-menu">
+                    <nav id="dropdown">
+                        <ul class="mobile-menu-nav">
+                            <li><a href="/dashboard">Dashboard</a></li>
+                            <li><a href="/investments">Investments</a></li>
+                            <li><a data-toggle="collapse" data-target="#users" href="#">User</a>
+                                <ul id="users" class="collapse dropdown-header-top">
+                                    <li><a href="/investors">Investors</a></li>
+                                    <li><a href="/users">Admin</a></li>
+                                </ul>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#reports" href="#">Reports</a>
+                                <ul id="reports" class="collapse dropdown-header-top">
+                                    <li><a href="#">Quarterly</a></li>
+                                    <li><a href="#">Yearly</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mobile Menu end -->
+<!-- Main Menu area start-->
+<div class="main-menu-area mg-tb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                    <li><a href="/dashboard"><i class="notika-icon notika-house"></i> Dashboard</a></li>
+                    <li><a href="/investments"><i class="notika-icon notika-form"></i> Investments</a></li>
+                    <li><a data-toggle="tab" href="#Returns"><i class="notika-icon notika-app"></i> Returns</a></li>
+                    <li><a data-toggle="tab" href="#user"><i class="notika-icon notika-support"></i> Users</a></li>
+                    <li><a data-toggle="tab" href="#Reports"><i class="notika-icon notika-bar-chart"></i> Reports</a></li>
+                </ul>
+                <div class="tab-content custom-menu-content">
+                    
+                    <div id="user" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li><a href="/users">Users</a>
+                            </li>
+                            <li><a href="/users/investors">Investors</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="Reports" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li><a href="#">Quarterly Reports</a>
+                            </li>
+                            <li><a href="#">Yearly Reports</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="Returns" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li><a href="/returns/trees">Tree Investments Returns</a>
+                            </li>
+                            <li><a href="/returns/fruits">Fruits Investments Returns</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main Menu area End-->

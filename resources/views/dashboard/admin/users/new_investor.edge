@@ -1,0 +1,86 @@
+@layout('dashboard/layout/main')
+
+@section('content')
+<div class="breadcomb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcomb-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-form"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Add New Investors</h2>
+                                    <p>Note: <span class="bread-ntd">All Investors must be accompanied by an active investment</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                            <div class="breadcomb-report">
+                                <button class="btn"><i class="notika-icon notika-sent"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-element-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-element-list">
+                    <div class="cmp-tb-hd bcs-hd">
+                        <h2>Add new Investor</h2>
+                    </div>
+                    <form method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="fname">First Name</label>
+                                <input type="name" class="form-control" name="fname" id="fname" placeholder="First Names">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="middlename">Middle Name</label>
+                                <input type="name" class="form-control" id="middlename" placeholder="Middle Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" name="group" value="2">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="lname">Last Name</label>
+                                <input type="name" class="form-control" name="lname" id="lname" placeholder="Last Name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="lname">ID / Passport</label>
+                                <input type="text" class="form-control" name="passport" id="passport" placeholder="ID / Passport">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="phone">Phone Number</label>
+                                <input type="number" class="form-control" name="phone" id="phone" placeholder="+254xxxxxxxxx">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group col-md-6">
+                            <button type="submit" data-loading-text="submitting..." class="btn btn-success">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form Element area End-->
+@endsection

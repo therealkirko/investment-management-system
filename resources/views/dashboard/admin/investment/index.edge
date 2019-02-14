@@ -1,0 +1,70 @@
+@layout('dashboard/layout/main')
+
+@section('content')
+<!-- Start Sale Statistic area-->
+
+<div class="clearfix hidden-xs hidden-sm"> </div>
+<div class="clearfix hidden-xs hidden-sm"> </div>
+
+<div class="data-table-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="data-table-list">
+                    <div class="basic-tb-hd">
+                        <h2>Investments</h2>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table id="data-table-basic" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Investor</th>
+                                    <th>Investment Type</th>
+                                    <th>Invested Capital</th>
+                                    <th>Investment period</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @each(investment in investments)
+                                    <tr>
+                                        <td>{{ investment.id }}</td>
+                                        <td>{{ investment.investors.firstname }} {{ investment.investors.middlename }} {{ investment.investors.lastname }}</td>
+                                        <td>
+                                            @if(investment.type === 'tree')
+                                                <span data-toggle="tooltip" data-placement="right" title="This indicates that the package has only tree investment" class="label label-default">{{ investment.type }}</span>
+                                            @elseif(investment.type === 'fruits')
+                                                <span data-toggle="tooltip" data-placement="right" title="This indicates that the package has only tree investment" class="label label-success">{{ investment.type }}</span>
+                                            @endif
+                                        </td>
+                                        <td>{{ investment.capital }}</td>
+                                        <td>{{ investment.investment_period }}</td>
+                                        <td>
+                                            <a class="btn btn-default btn-icon-notika"> View</a>
+                                            <a class="btn btn-primary btn-icon-notika"> Edit</a>
+                                            <a class="btn btn-danger btn-icon-notika"> Delete</a>
+                                        </td>
+                                    </tr>
+                                @endeach
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Investor</th>
+                                    <th>Investment Type</th>
+                                    <th>Invested Capital</th>
+                                    <th>Investment period</th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data Table area End-->
+@endsection

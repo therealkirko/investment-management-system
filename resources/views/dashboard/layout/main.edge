@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Dashboard One | Notika - Notika Admin Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts
+		============================================ -->
+    {{ style('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900') }}
+    <!-- Bootstrap CSS
+		============================================ -->
+    {{ style('assets/css/bootstrap.min.css') }}
+    <!-- Fontawesome CSS
+		============================================ -->
+    {{ style('assets/css/font-awesome.min.css') }}
+    <!-- meanmenu CSS
+		============================================ -->
+    {{ style('assets/css/meanmenu/meanmenu.min.css') }}
+    <!-- animate CSS
+		============================================ -->
+    {{ style('assets/css/animate.css') }}
+    <!-- notika icon CSS
+		============================================ -->
+    {{ style('assets/css/notika-custom-icon.css') }}
+    <!-- wave CSS
+    <!-- main CSS
+		============================================ -->
+    {{ style('assets/css/main.css') }}
+    <!-- Data Table JS
+		============================================ -->
+    {{ style('assets/css/jquery.dataTables.min.css') }}
+    <!-- style CSS
+		============================================ -->
+    {{ style('assets/css/style.css') }}
+    <!-- responsive CSS
+		============================================ -->
+    {{ style('assets/css/responsive.css') }}
+    <!-- modernizr JS
+		============================================ -->
+</head>
+
+<body>
+
+    @include('dashboard/layout/nav')
+    
+    @!section('content')
+
+
+    @include('dashboard/layout/footer')
+
+    {{ script('assets/js/vendor/jquery-1.12.4.min.js') }}
+    <!-- bootstrap JS
+		============================================ -->
+    {{ script('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js') }}
+    {{ script('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')}}
+    <!-- meanmenu JS
+		============================================ -->
+    {{ script('assets/js/meanmenu/jquery.meanmenu.js') }}
+    <!-- counterup JS
+		============================================ -->
+    {{ script('assets/js/counterup/jquery.counterup.min.js') }}
+    {{ script('assets/js/counterup/waypoints.min.js') }}
+    {{ script('assets/js/counterup/counterup-active.js') }}
+
+    <!-- sparkline JS
+		============================================ -->
+    {{ script('assets/js/sparkline/jquery.sparkline.min.js') }}
+    {{ script('assets/js/sparkline/sparkline-active.js') }}
+
+    <!-- Data Table JS
+		============================================ -->
+    {{ script('assets/js/data-table/jquery.dataTables.min.js') }}
+    {{ script('assets/js/data-table/data-table-act.js') }}
+    <!-- main JS
+		============================================ -->
+    {{ script('assets/js/main.js') }}
+    {{ script('assets/js/form-wizard.js') }}
+</body>
+
+</html>

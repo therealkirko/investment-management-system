@@ -1,0 +1,70 @@
+@layout('dashboard/layout/main')
+
+@section('content')
+<!-- Start Sale Statistic area-->
+<div class="container">
+    <a href="/users/new_investor" style="float: right;" class="btn btn-success btn-icon-notika"><i class="fa fa-plus"></i> Add New Investor</a>
+</div>
+
+<div class="clearfix hidden-xs hidden-sm"> </div>
+<div class="clearfix hidden-xs hidden-sm"> </div>
+
+<div class="data-table-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="data-table-list">
+                    <div class="basic-tb-hd">
+                        <h2>Investors</h2>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table id="data-table-basic" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>ID /Passport /Alien number</th>
+                                    <th>No.of investments</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @each(data in investors)
+                                    <tr>
+                                        <td>{{ data.id }}</td>
+                                        <td>{{ data.firstname }} {{ data.middlename }}</td>
+                                        <td>{{ data.phone }}</td>
+                                        <td>{{ data.email }}</td>
+                                        <td>{{ data.passport }}</td>
+                                        <td>{{ data }}</td>
+                                        <td>
+                                            <button class="btn btn-default"></i> View</button>
+                                            <button class="btn btn-primary"></i> Edit</button>
+                                            <button class="btn btn-danger"></i> Delete</button>
+                                        </td>
+                                    </tr>
+                                @endeach
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>ID /Passport /Alien number</th>
+                                    <th>No.of investments</th>
+                                    <th>Action</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data Table area End-->
+@endsection
